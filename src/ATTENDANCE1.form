@@ -347,7 +347,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\REBECCA\Desktop\icons\Ok-icon.png"/>
+              <Image iconType="2" name="C:\Users\REBECCA\Desktop\icons\ok-icon (1).png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="SUBMIT"/>
           </Properties>
@@ -381,7 +381,7 @@
           </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="160" y="500" width="90" height="-1"/>
+              <AbsoluteConstraints x="270" y="500" width="90" height="-1"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -401,10 +401,10 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton3">
+        <Component class="javax.swing.JButton" name="deletebtn">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="cc" green="33" red="0" type="rgb"/>
+              <Color blue="0" green="0" red="99" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="12" style="1"/>
@@ -413,16 +413,16 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\REBECCA\Desktop\icons\print-icon.png"/>
+              <Image iconType="2" name="C:\Users\REBECCA\Desktop\icons\SignOut-icon (1).png"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="PRINT"/>
+            <Property name="text" type="java.lang.String" value="DELETE"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton3ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="deletebtnActionPerformed"/>
           </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="410" y="500" width="90" height="-1"/>
+              <AbsoluteConstraints x="160" y="500" width="90" height="-1"/>
             </Constraint>
           </Constraints>
         </Component>

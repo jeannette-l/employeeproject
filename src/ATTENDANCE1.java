@@ -74,7 +74,7 @@ public class ATTENDANCE1 extends javax.swing.JFrame {
         save = new javax.swing.JButton();
         clrbtn = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
+        deletebtn = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -247,7 +247,7 @@ public class ATTENDANCE1 extends javax.swing.JFrame {
         save.setBackground(new java.awt.Color(0, 51, 204));
         save.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         save.setForeground(new java.awt.Color(255, 255, 255));
-        save.setIcon(new javax.swing.ImageIcon("C:\\Users\\REBECCA\\Desktop\\icons\\Ok-icon.png")); // NOI18N
+        save.setIcon(new javax.swing.ImageIcon("C:\\Users\\REBECCA\\Desktop\\icons\\ok-icon (1).png")); // NOI18N
         save.setText("SUBMIT");
         save.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -266,24 +266,24 @@ public class ATTENDANCE1 extends javax.swing.JFrame {
                 clrbtnActionPerformed(evt);
             }
         });
-        jPanel1.add(clrbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 500, 90, -1));
+        jPanel1.add(clrbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 500, 90, -1));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("EMPLOYEE ATTENDANCE");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 30, -1, -1));
 
-        jButton3.setBackground(new java.awt.Color(0, 51, 204));
-        jButton3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setIcon(new javax.swing.ImageIcon("C:\\Users\\REBECCA\\Desktop\\icons\\print-icon.png")); // NOI18N
-        jButton3.setText("PRINT");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        deletebtn.setBackground(new java.awt.Color(153, 0, 0));
+        deletebtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        deletebtn.setForeground(new java.awt.Color(255, 255, 255));
+        deletebtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\REBECCA\\Desktop\\icons\\SignOut-icon (1).png")); // NOI18N
+        deletebtn.setText("DELETE");
+        deletebtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                deletebtnActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 500, 90, -1));
+        jPanel1.add(deletebtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 500, 90, -1));
 
         jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(102, 102, 102));
@@ -385,31 +385,30 @@ public class ATTENDANCE1 extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel11MouseClicked
 
     private void clrbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clrbtnActionPerformed
-        // TODO add your handling code here:
-        EMPLOYEE_ID.setText("");
-        Fname.setText("");
+        
+       EMPLOYEE_ID.setText("");
+       Fname.setText("");
         Lname.setText("");
         time.setCalendar(null);
         YR.setSelected(false);
         NR.setSelected(false);
-        
+         
     }//GEN-LAST:event_clrbtnActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-    MessageFormat header=new MessageFormat("report print");
-            MessageFormat footer=new MessageFormat("page {0,number,integer}");
+    private void deletebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deletebtnActionPerformed
+       
+            String del="DELETE from attendancy  where ID=?";
         try {
-         attendtable.print(JTable.PrintMode.NORMAL,header,footer);
-        } 
-        catch (java.awt.print.PrinterException e) {
-            System.err.format("can not print", e.getMessage());
-        }
-      
+          Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/employeemgt", "root","");   
+          PreparedStatement pst=con.prepareStatement(del);
+          pst.setString(1, EMPLOYEE_ID.getText());
+          pst.execute();
+         JOptionPane.showMessageDialog(null, "delete successfuly");
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, ex);
 
-
-
-// TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+        }// TODO add your handling code here:
+    }//GEN-LAST:event_deletebtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -457,7 +456,7 @@ public class ATTENDANCE1 extends javax.swing.JFrame {
     private javax.swing.JTable attendtable;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton clrbtn;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton deletebtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;

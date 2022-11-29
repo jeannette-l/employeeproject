@@ -273,7 +273,7 @@ public class home extends javax.swing.JFrame {
 
     private void jLabel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseClicked
         // TODO add your handling code here:
-        ATTENDANCE1 menu=new ATTENDANCE1();
+     attendancelist menu=new attendancelist();
              menu.setVisible(true);
                 setVisible(false);
     }//GEN-LAST:event_jLabel10MouseClicked
@@ -307,7 +307,7 @@ public class home extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel13MouseClicked
 
     private void jLabel11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseClicked
-ATTENDANCE1 menu=new ATTENDANCE1();
+attendancelist menu=new attendancelist();
           menu.setVisible(true);
             setVisible(false);        // TODO add your handling code here:
     }//GEN-LAST:event_jLabel11MouseClicked

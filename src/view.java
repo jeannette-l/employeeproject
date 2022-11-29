@@ -116,7 +116,6 @@ public class view extends javax.swing.JFrame {
         search = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1024, 600));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         display.setBackground(new java.awt.Color(0, 102, 102));
@@ -148,6 +147,8 @@ public class view extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
+        jTable1.setRowHeight(22);
+        jTable1.setShowGrid(true);
         jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jTable1MouseClicked(evt);
@@ -155,7 +156,7 @@ public class view extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jTable1);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 150, 570, 290));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 150, 610, 290));
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(153, 153, 153));
@@ -405,14 +406,19 @@ public class view extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 102, 102));
         jLabel6.setText("Search");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 100, 80, 30));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 100, 80, 30));
 
+        search.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchActionPerformed(evt);
+            }
+        });
         search.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 searchKeyReleased(evt);
             }
         });
-        getContentPane().add(search, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 102, 140, 30));
+        getContentPane().add(search, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 100, 140, 30));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -522,7 +528,7 @@ public class view extends javax.swing.JFrame {
           PreparedStatement pst=con.prepareStatement(del);
           pst.setString(1, ID.getText());
           pst.execute();
-         JOptionPane.showMessageDialog(null, "delete successfuly");
+         JOptionPane.showMessageDialog(null, "deleted successfuly");
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(null, ex);
 
@@ -569,6 +575,10 @@ public class view extends javax.swing.JFrame {
         tr.setRowFilter(RowFilter.regexFilter(search));
         // TODO add your handling code here:
     }//GEN-LAST:event_searchKeyReleased
+
+    private void searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_searchActionPerformed
 
     /**
      * @param args the command line arguments
